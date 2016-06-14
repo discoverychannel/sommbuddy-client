@@ -5,7 +5,18 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('sommbuddy', ['ionic']);
 
-.run(function($ionicPlatform) {
+app.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
+    .state('main', {
+      url: '/',
+      templateUrl: 'js/views/main.html',
+      controller: 'MainController',
+      controllerAs: 'Main'
+    });
+    $urlRouterProvider.otherwise('/');
+});
+
+app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

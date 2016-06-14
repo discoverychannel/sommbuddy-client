@@ -15,28 +15,21 @@
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
+    <script src="./js/maincontroller.js" charset="utf-8"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-route.js" charset="utf-8"></script>
     <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+    <base href="/">
   </head>
   <!-- your app's js -->
   <body ng-app="sommbuddy">
 
     <ion-pane>
       <ion-header-bar class="bar-dark">
-        <!-- <h2 class="title">sommbuddy</h2> -->
+        <h2 class="title">sommbuddy</h2>
         <img src="img/logo.png" alt="" class="logo">
       </ion-header-bar>
 
-      <ion-header-bar class="bar-subheader">
-        <h3 class="question">food weight?</h3>
-      </ion-header-bar>
-
-      <ion-content class="row row-center">
-          <div class="col col-50 circle-text">
-            <div>heavy</div>
-          </div>
-          <div class="col col-50 circle-text">
-            <div>light</div>
-          </div>
+      <ion-content ui-view class="row row-center">
       </ion-content>
     </ion-pane>
   </body>
