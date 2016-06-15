@@ -20,8 +20,9 @@
         }
       }
       vm.price = function(val) {
+        Selections.getWines(val);
         price = val;
-        $state.go('result')
+        $state.go('result');
       }
     }
 
