@@ -1,12 +1,68 @@
 "
   [
     {
-      "val":200,
-      "filterCodes":[456,789,345]
+      "val":111,
+      "filterCodes":[197,170,139]
     },
     {
-      "val":346,
-      "filterCodes":[567,345,678]
+      "val":112,
+      "filterCodes":[138,10080,146]
+    },
+    {
+      "val":113,
+      "filterCodes":[169,10079,141]
+    },
+    {
+      "val":114,
+      "filterCodes":[143,163,141]
+    },
+    {
+      "val":191,
+      "filterCodes":[151,162,165]
+    },
+    {
+      "val":192,
+      "filterCodes":[153,10087,136]
+    },
+    {
+      "val":193,
+      "filterCodes":[162,151,165]
+    },
+    {
+      "val":195,
+      "filterCodes":[190,140,153]
+    },
+    {
+      "val":291,
+      "filterCodes":[151,162,165]
+    },
+    {
+      "val":292,
+      "filterCodes":[153,10087,136]
+    },
+    {
+      "val":293,
+      "filterCodes":[162,151,165]
+    },
+    {
+      "val":295,
+      "filterCodes":[190,140,153]
+    },
+    {
+      "val":211,
+      "filterCodes":[197,170,139]
+    },
+    {
+      "val":212,
+      "filterCodes":[138,10080,146]
+    },
+    {
+      "val":213,
+      "filterCodes":[169,10079,141]
+    },
+    {
+      "val":214,
+      "filterCodes":[143,163,141]
     }
   ]
 "
