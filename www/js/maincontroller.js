@@ -5,14 +5,12 @@
     .module('sommbuddy')
     .controller('MainController', MainController);
 
-    function MainController($state) {
+    function MainController($state, Selections) {
       var vm = this;
-      var userSelection = 0;
       var price = 0;
 
       vm.choice = function (val) {
-        // console.log(val);
-        userSelection += val;
+        Selections.addVal(val);
         if (val == 90 || val == 10) {
           $state.go('foodtaste')
         } else if (val < 10) {
