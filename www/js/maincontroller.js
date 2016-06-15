@@ -8,29 +8,23 @@
     function MainController($state) {
       var vm = this;
       var userSelection = 0;
+      var price = 0;
 
-      vm.message = 'Are you endulging with food or not?';
-      vm.foodYes = function () {
-        userSelection += 100;
-        console.log(userSelection);
-        $state.go('preference1');
+      vm.choice = function (val) {
+        // console.log(val);
+        userSelection += val;
+        if (val == 90 || val == 10) {
+          $state.go('foodtaste')
+        } else if (val < 10) {
+          $state.go('price')
+        } else {
+        $state.go('preference'+val);
+        }
       }
-
-      vm.animal = function() {
-        userSelection += 40;
-        console.log(userSelection);
+      vm.price = function(val) {
+        price = val;
+        $state.go('result')
       }
-
-
-      // vm.foodNo = function() {
-      //   userSelection += 200;
-      //   console.log(userSelection);
-      //   $state.go('preference2');
-      // }
-
-      // second question, with food yes
-      vm.foodMessage = 'Are you preparing a heart attack or carrot sticks?';
-
     }
 
 })();

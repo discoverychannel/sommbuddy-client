@@ -13,15 +13,39 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'MainController',
       controllerAs: 'Main'
     })
-    .state('preference1', {
-      url: '/preference1',
-      templateUrl: 'js/views/preference1.html',
+    .state('preference1000', {
+      url: '/preference1000',
+      templateUrl: 'js/views/preference1000.html',
       controller: 'MainController',
       controllerAs: 'Main'
     })
-    .state('preference2', {
-      url: '/preference2',
-      templateUrl: 'js/views/preference2.html',
+    .state('preference100', {
+      url: '/preference100',
+      templateUrl: 'js/views/preference100.html',
+      controller: 'MainController',
+      controllerAs: 'Main'
+    })
+    .state('preference200', {
+      url: '/preference200',
+      templateUrl: 'js/views/preference200.html',
+      controller: 'MainController',
+      controllerAs: 'Main'
+    })
+    .state('foodtaste', {
+      url: '/foodtaste',
+      templateUrl: 'js/views/foodtaste.html',
+      controller: 'MainController',
+      controllerAs: 'Main'
+    })
+    .state('price', {
+      url: '/price',
+      templateUrl: 'js/views/price.html',
+      controller: 'MainController',
+      controllerAs: 'Main'
+    })
+    .state('result', {
+      url: '/result',
+      templateUrl: 'js/views/result.html',
       controller: 'MainController',
       controllerAs: 'Main'
     });
