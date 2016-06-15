@@ -1,11 +1,13 @@
-<ion-content class="bar-subheader">
+<div class="bar bar-subheader">
   <h3 class="question">
-    {{Main.message}}
+    {{Main.foodMessage}}
   </h3>
-</ion-content>
-<div class="col col-50 circle-text">
-  <div>heavy</div>
 </div>
-<div class="col col-50 circle-text">
-  <div>light</div>
+<div class="row row-center">
+  <div class="col col-50 circle-text" ng-click="choiceAnimal">
+    <div>animal</div>
+  </div>
+  <div class="col col-50 circle-text" ng-click="choiceVeggie">
+    <div>veggie</div>
+  </div>
 </div>

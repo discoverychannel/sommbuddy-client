@@ -12,6 +12,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'js/views/main.html',
       controller: 'MainController',
       controllerAs: 'Main'
+    })
+    .state('preference1', {
+      url: '/preference1',
+      templateUrl: 'js/views/preference1.html',
+      controller: 'MainController',
+      controllerAs: 'Main'
     });
     $urlRouterProvider.otherwise('/');
 });

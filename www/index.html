@@ -20,17 +20,16 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
     <base href="/">
   </head>
-  <!-- your app's js -->
   <body ng-app="sommbuddy">
-
     <ion-pane>
       <ion-header-bar class="bar-dark">
-        <h2 class="title">sommbuddy</h2>
         <img src="img/logo.png" alt="" class="logo">
+        <h2 class="title">sommbuddy</h2>
+        <!-- <button class="button button-clear button-positive">Profile</button> -->
       </ion-header-bar>
 
-      <ion-content ui-view class="row row-center">
-      </ion-content>
+      <ion-nav-view></ion-nav-view>
+      
     </ion-pane>
   </body>
 </html>
