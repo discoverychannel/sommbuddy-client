@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('sommbuddy', ['ionic']);
+var app = angular.module('sommbuddy', ['ionic', 'ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -16,6 +16,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('preference1', {
       url: '/preference1',
       templateUrl: 'js/views/preference1.html',
+      controller: 'MainController',
+      controllerAs: 'Main'
+    })
+    .state('preference2', {
+      url: '/preference2',
+      templateUrl: 'js/views/preference2.html',
       controller: 'MainController',
       controllerAs: 'Main'
     });

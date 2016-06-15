@@ -7,19 +7,17 @@
 
     function MainController($state) {
       var vm = this;
+      //first question
       var userSelection = 0;
 
       vm.message = 'Are you endulging with food or not?';
-      vm.foodYes = function () {
-        userSelection += 100;
+
+      vm.foodYes = function (input) {
+        userSelection += input;
         console.log(userSelection);
-        $state.go('preference1');
+        $state.go('preference' + input);
       }
 
-      vm.animal = function() {
-        userSelection += 40;
-        console.log(userSelection);
-      }
 
 
       // vm.foodNo = function() {
