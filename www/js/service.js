@@ -13,19 +13,20 @@
       addVal: function(val) {
          userSelection += val;
          console.log(userSelection);
-         return userSelection
+         return userSelection;
       },
       getWines: function(price) {
-        $http.get('filters.json').then(function(data){
-          for(filters in data){
-            if(filters.val == userSelection){
-              return filters.filterCodes.join('+');
-              // "123+235+4547"
-              // return filters.filterCodes[Math.floor(Math.random()*filters.filterCodes.length)];
+        $http.get('./js/filters.json').then(function(data){
+          var filterObjs = JSON.parse(JSON.stringify(data)).data;
+          filterObjs.forEach(function(filterObj){
+            console.log(filterObj);
+            if(filterObj.val == userSelection){
+              console.log(filterObj.filterCodes.join('+'));
+              return filterObj.filterCodes.join('+');
             }
-          }
+          })
         })
-        .then(function(filterCode) {
+        .then(function(filterCodes) {
           $http.get('/' + price + filterCodes).then(function(d) {
             function Wine (name, grape, vineyard, vintage, region, price, picture){
               this.name = name;
