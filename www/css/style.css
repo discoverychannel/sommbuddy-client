@@ -5,12 +5,10 @@
 }
 .question {
   text-align: center;
-  padding-top: 10px;
+  padding-top: 20%;
 }
 .logo {
-
   margin-left: 15%;
-
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
@@ -18,8 +16,7 @@
   border: solid black 1px;
 }
 .circle-text{
-    padding-top: 40%;
-    /*padding: 20%;*/
+    padding-top: 10%;
     width:50%;
 }
 .circle-text:after{
@@ -27,10 +24,15 @@
     display: block;
     width: 100%;
     padding-bottom: 100%;
-    border: solid  #CCCCCC 3px;
+    border: solid  #771100 2px;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
+    opacity: .7;
+}
+.right:after {
+  background-color: #771100;
+  opacity: .2;
 }
 .circle-text div {
     font-size: 30px;
@@ -41,9 +43,25 @@
     margin-top:-0.5em;
     text-align:center;
     color: #771100;
+    opacity: .7;
+}
+.main {
+  height: 100%;
 }
 
-.box1, box2, box3 {
-   height: 300px;
-   border: 2px solid blue;
+.main::after {
+  content: "";
+  background: url(../img/sittingwine.jpg)no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+
 }
