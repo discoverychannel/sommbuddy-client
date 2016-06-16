@@ -7,6 +7,11 @@ var app = angular.module('sommbuddy', ['ionic', 'ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
+  .state('login', {
+    url: '/login',
+    templateUrl: 'js/views/login.html',
+    controller: 'LoginCtrl'
+})
     .state('main', {
       url: '/',
       templateUrl: 'js/views/main.html',
