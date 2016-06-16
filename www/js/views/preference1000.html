@@ -1,13 +1,19 @@
-<div class="bar bar-subheader">
+<style type="text/css">
+  .main::after {
+    background: url(../img/foodwine.jpg)no-repeat center center fixed;
+  }
+</style>
+
+<div class="main">
   <h3 class="question">
     Are you preparing a heart attack or carrot sticks?
   </h3>
-</div>
-<div class="row row-center">
-  <div class="col col-50 circle-text" ng-click="Main.choice(100)">
-    <div>animal</div>
-  </div>
-  <div class="col col-50 circle-text" ng-click="Main.choice(200)">
-    <div>veggie</div>
+  <div class="row row-center">
+    <div class="col col-50 circle-text" ng-click="Main.choice(100)">
+      <div>animal</div>
+    </div>
+    <div class="col col-50 circle-text" ng-click="Main.choice(200)">
+      <div>veggie</div>
+    </div>
   </div>
 </div>
