@@ -19,7 +19,8 @@
         }
       }
       vm.price = function(val) {
-        Selections.getWines(val);
+        var priceurl = 'price'+val;
+        Selections.getWines(priceurl);
         $state.go('result');
       }
     }
