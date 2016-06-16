@@ -16,7 +16,7 @@
          return userSelection
       },
       getWines: function(price) {
-        $http.get('./js/filters.json').then(function(data){
+        $http.get('filters.json').then(function(data){
           for(filters in data){
             if(filters.val == userSelection){
               return filters.filterCodes.join('+');
