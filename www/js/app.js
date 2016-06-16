@@ -90,7 +90,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'MainController',
       controllerAs: 'Main'
     });
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/login');
 });
 
 app.run(function($ionicPlatform) {
