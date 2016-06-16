@@ -1,14 +1,19 @@
-<div class="bar bar-subheader">
-  <h3 class="question">
-    Are you indulging with food or not?
-  </h3>
-</div>
-<div class="row row-center">
+<style type="text/css">
+  #mainmain::after {
+    background-image: url(../img/foodwine.jpg);
+}
+</style>
 
-  <div class="col col-50 circle-text" ng-click="Main.choice(1000)">
-    <div>ch'yeah</div>
-  </div>
-  <div class="col col-50 circle-text" ng-click="Main.choice(2000)">
-    <div>nope</div>
+<div class="main" id="mainmain">
+  <h3 class="question">
+    Are you indulging with food?
+  </h3>
+  <div class="row row-center">
+    <div class="col col-50 circle-text" ng-click="Main.choice(1000)">
+      <div>ch'yeah</div>
+    </div>
+    <div class="col col-50 circle-text right" ng-click="Main.choice(2000)" >
+      <div>nope</div>
+    </div>
   </div>
 </div>

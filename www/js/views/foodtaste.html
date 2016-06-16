@@ -1,21 +1,28 @@
-<div class="bar bar-subheader">
+<style type="text/css">
+  .main::after {
+    background: url(../img/sittingwine.jpg)no-repeat center center fixed;
+}
+</style>
+
+<div class="main">
   <h3 class="question">
     spicy,smokey,savory,citrusy
   </h3>
-</div>
-<div class="row row-center">
-  <div class="col col-50 circle-text" ng-click="Main.choice(1)">
-    <div>savory</div>
+
+  <div class="row row-center">
+    <div class="col col-50 circle-text" ng-click="Main.choice(1)">
+      <div>savory</div>
+    </div>
+    <div class="col col-50 circle-text right" ng-click="Main.choice(2)">
+      <div>spicy</div>
+    </div>
   </div>
-  <div class="col col-50 circle-text" ng-click="Main.choice(2)">
-    <div>spicy</div>
-  </div>
-</div>
-<div class="row row-center">
-  <div class="col col-50 circle-text" ng-click="Main.choice(3)">
-    <div>smoky</div>
-  </div>
-  <div class="col col-50 circle-text" ng-click="Main.choice(4)">
-    <div>citrusy</div>
+  <div class="row row-center" style="margin-top:-10%">
+    <div class="col col-50 circle-text right" ng-click="Main.choice(3)">
+      <div>smoky</div>
+    </div>
+    <div class="col col-50 circle-text" ng-click="Main.choice(4)">
+      <div>citrusy</div>
+    </div>
   </div>
 </div>

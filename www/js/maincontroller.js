@@ -7,7 +7,6 @@
 
     function MainController($state, Selections) {
       var vm = this;
-      var price = 0;
 
       vm.choice = function (val) {
         Selections.addVal(val);
@@ -20,8 +19,8 @@
         }
       }
       vm.price = function(val) {
-        Selections.getWines(val);
-        price = val;
+        var priceurl = 'price'+val;
+        Selections.getWines(priceurl);
         $state.go('result');
       }
     }
