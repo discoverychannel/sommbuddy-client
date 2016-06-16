@@ -19,6 +19,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'MainController',
       controllerAs: 'Main'
     })
+    .state('preference2000', {
+      url: '/preference2000',
+      templateUrl: 'js/views/preference2000.html',
+      controller: 'MainController',
+      controllerAs: 'Main'
+    })
     .state('preference100', {
       url: '/preference100',
       templateUrl: 'js/views/preference100.html',
@@ -28,6 +34,36 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('preference200', {
       url: '/preference200',
       templateUrl: 'js/views/preference200.html',
+      controller: 'MainController',
+      controllerAs: 'Main'
+    })
+    .state('preference300', {
+      url: '/preference300',
+      templateUrl: 'js/views/preference300.html',
+      controller: 'MainController',
+      controllerAs: 'Main'
+    })
+    .state('preference400', {
+      url: '/preference400',
+      templateUrl: 'js/views/preference400.html',
+      controller: 'MainController',
+      controllerAs: 'Main'
+    })
+    .state('preference20', {
+      url: '/preference20',
+      templateUrl: 'js/views/preference20.html',
+      controller: 'MainController',
+      controllerAs: 'Main'
+    })
+    .state('preference30', {
+      url: '/preference30',
+      templateUrl: 'js/views/preference30.html',
+      controller: 'MainController',
+      controllerAs: 'Main'
+    })
+    .state('preference40', {
+      url: '/preference40',
+      templateUrl: 'js/views/preference40.html',
       controller: 'MainController',
       controllerAs: 'Main'
     })
