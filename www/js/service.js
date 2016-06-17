@@ -24,7 +24,7 @@
       },
       getWines: function(price) {
         var code;
-        $http.get('./js/filters.json').then(function(data){
+        return $http.get('./js/filters.json').then(function(data){
           var filterObjs = JSON.parse(JSON.stringify(data)).data;
           filterObjs.forEach(function(filterObj){
             if(filterObj.val == userSelection){
@@ -34,7 +34,7 @@
           return price + code;
         })
         .then(function(filterCodes) {
-          $http.get('http://localhost:3000/' + filterCodes).then(function(d) {
+          return $http.get('http://localhost:3000/' + filterCodes).then(function(d) {
             d = d.data;
             var createWines = function() {
               for(var i = 0; i < 3; i++) {
@@ -45,14 +45,14 @@
                   typeof d[i][0].Vintage === 'string' ? d[i][0].Vintage : 'no vintage',
                   typeof d[i][0].Appellation.Name === 'string' ? d[i][0].Appellation.Name : 'no region',
                   typeof d[i][0].PriceRetail === 'number' ? d[i][0].PriceRetail : 'no price',
-                  typeof d[i][0].Labels[0].Url === 'url' ? d[i][0].Labels[0].Url : 'no label',
+                  typeof d[i][0].Labels[0].Url === 'string' ? d[i][0].Labels[0].Url : 'no label',
                   typeof d[i][0].Url === 'string' ? d[i][0].Url : 'no url'
                 )
                 wines.push(wine);
               }
+              return wines;
             }
-          createWines();
-          console.log(wines);
+          return createWines();
         })
       })
     },

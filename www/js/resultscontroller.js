@@ -5,20 +5,15 @@
     .module('sommbuddy')
     .controller('ResultsController', ResultsController);
 
-    function ResultsController($state, Selections, $ionicSlideBoxDelegate) {
+    function ResultsController($state, Selections, $ionicSlideBoxDelegate, $stateParams) {
       var vm = this;
-      vm.results = Selections.wineResults();
+      Selections.getWines($stateParams.price).then(function(wines) {
+        vm.results = wines;
+        $ionicSlideBoxDelegate.update();
+        console.log('wines', wines);
+      })
       vm.like = false;
 
-      // vm.nextSlide = function() {
-      //   $ionicSlideBoxDelegate.next();
-      // }
-      // vm.slideHasChanged = function($index){
-      //   alert('slideHasChanged $index=' + $index);
-      //   if($index === 0){
-      //
-      //   }
-      // };
       vm.like = function (wine) {
         vm.like = !vm.like;
         if (vm.like) {

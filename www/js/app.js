@@ -85,7 +85,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       controllerAs: 'Main'
     })
     .state('result', {
-      url: '/result',
+      url: '/result?price',
       templateUrl: 'js/views/result.html',
       controller: 'ResultsController',
       controllerAs: 'Results'
