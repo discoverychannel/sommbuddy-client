@@ -19,9 +19,8 @@
         //if logged in = true, save insertWine(wine)
         vm.like = !vm.like;
         if (vm.like) {
-          return Selections.insertWine(wine).then(function(item){
+          Selections.insertWine(wine).then(function(item){
             vm.wineId = item.data[0];
-            return vm.wineId;
           });
         } else {
           Selections.removeWine(vm.wineId).then(function(item){
