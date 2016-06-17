@@ -1,4 +1,5 @@
 app.service('LoginService', function($q) {
+  var status = false;
   return {
       loginUser: function(name, pw) {
           var deferred = $q.defer();
@@ -6,6 +7,7 @@ app.service('LoginService', function($q) {
 
           if (name == 'user' && pw == 'pass') {
               deferred.resolve('Welcome ' + name + '!');
+              status = true;
           } else {
               deferred.reject('Wrong credentials.');
           }
@@ -18,6 +20,10 @@ app.service('LoginService', function($q) {
               return promise;
           }
           return promise;
+      },
+      checkStatus : function(){
+        return status;
       }
+
   }
 })
