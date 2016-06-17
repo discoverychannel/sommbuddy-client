@@ -5,7 +5,7 @@
     .module('sommbuddy')
     .controller('MainController', MainController);
 
-    function MainController($state, Selections, $ionicSlideBoxDelegate) {
+    function MainController($state, Selections) {
       var vm = this;
 
       vm.choice = function (val) {
@@ -20,11 +20,8 @@
       }
       vm.price = function(val) {
         var priceurl = 'price'+val;
-        Selections.getWines(priceurl);
+        // Selections.getWines(priceurl);
         $state.go('result');
-      }
-      vm.nextSlide = function() {
-        $ionicSlideBoxDelegate.next();
       }
       vm.results = Selections.wineResults();
     }

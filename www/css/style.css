@@ -45,9 +45,6 @@
     color: #771100;
     opacity: .7;
 }
-.main {
-  height: 100%;
-}
 
 .main::after {
   content: "";

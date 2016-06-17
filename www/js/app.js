@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('sommbuddy', ['ionic', 'ui.router']);
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
   .state('login', {
     url: '/login',
@@ -87,10 +87,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('result', {
       url: '/result',
       templateUrl: 'js/views/result.html',
-      controller: 'MainController',
-      controllerAs: 'Main'
+      controller: 'ResultsController',
+      controllerAs: 'Results'
     });
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/');
+    $locationProvider.html5Mode(true);
 });
 
 app.run(function($ionicPlatform) {
