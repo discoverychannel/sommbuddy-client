@@ -30,6 +30,15 @@
         .then(function(filterCodes) {
           $http.get('http://localhost:3000/' + filterCodes).then(function(d) {
             d = d.data[0];
+            console.log("Name = " + d[0].Name);
+            console.log("Varietal = " + d[0].Varietal.Name);
+            console.log("Vineyard =" + d[0].Vineyard.Name);
+            console.log("Vintage = " + d[0].Vintage);
+            console.log("Region = " + d[0].Appellation.Region.Name);
+            console.log("Price = " + d[0].PriceRetail);
+            console.log("Picture = " + d[0].Labels[0].Url);
+            console.log("StoreUrl = " + d[0].Url);
+            console.log(d[0]);
             function Wine (name, grape, vineyard, vintage, region, price, picture, storeUrl){
               this.name = name;
               this.grape = grape;
@@ -41,58 +50,28 @@
               this.storeUrl = storeUrl
             }
 
-            var createWines = function(){
-              d.forEach(function(wineObj)) {
+            var createWines = function(index){
+              for (var i = 0; i < 3; i++) {
                 var wine = new Wine (
-                  wineObj.Name,
-                  wineObj.Varietal.Name,
-                  wineObj.Vineyard.Name,
-                  wineObj.Vintage,
-                  wineObj.Appellation.Name + ', ' + wineObj.Appellation.Region.Name,
-                  wineObj.PriceRetail,
-                  wineObj.Labels[0].Url,
-                  wineObj.Url
+                  d[i].Name,
+                  d[i].Varietal.Name,
+                  d[i].Vineyard.Name,
+                  d[i].Vintage,
+                  d[i].Appellation.Name + ', ' + d[i].Apellation.Region.Name,
+                  d[i].PriceRetail,
+                  d[i].Labels[0].Url,
+                  d[i].Url
                 );
                 wines.push(wine);
-              })
-            };
+                console.log(wine);
+              }
+            }
             createWines();
           })
         })
       },
       wineResults: function(){
-
-        return wines = [
-          {
-            name: 'Veuve Clicquot Brut Yellow Label',
-            grape: 'Non-Vintage',
-            vineyard: 'Veuve Clicquot',
-            vintage: 'Non-Vintage',
-            region: 'France - Other regions',
-            price: 55.99,
-            picture: 'http://cache.wine.com/labels/528m.jpg',
-            storeUrl: 'http://www.wine.com/v6/Veuve-Clicquot-Brut-Yellow-Label/wine/528/Detail.aspx'
-          },
-          {
-            name: 'Veuve Clicquot Brut Yellow Label',
-            grape: 'Non-Vintage',
-            vineyard: 'Veuve Clicquot',
-            vintage: 'Non-Vintage',
-            region: 'France - Other regions',
-            price: 55.99,
-            picture: 'http://cache.wine.com/labels/528m.jpg',
-            storeUrl: 'http://www.wine.com/v6/Veuve-Clicquot-Brut-Yellow-Label/wine/528/Detail.aspx'
-          },{
-            name: 'Veuve Clicquot Brut Yellow Label',
-            grape: 'Non-Vintage',
-            vineyard: 'Veuve Clicquot',
-            vintage: 'Non-Vintage',
-            region: 'France - Other regions',
-            price: 55.99,
-            picture: 'http://cache.wine.com/labels/528m.jpg',
-            storeUrl: 'http://www.wine.com/v6/Veuve-Clicquot-Brut-Yellow-Label/wine/528/Detail.aspx'
-          }
-        ];
+        return wines;
       }
     }
   }

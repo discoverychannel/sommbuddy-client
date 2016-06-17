@@ -1,19 +1,30 @@
-<!-- <div>
-  <h1 style="padding-top:20%">hello</h1>
-  <li>{{Results}}</li>
-</div> -->
+<ion-slide-box on-slide-changed="slideHasChanged($index)">
+  <ion-slide ng-repeat="wine in Results.results">
+    <div class="box blue">
+      <h2 style="padding-top:20%">Your grapes for the day</h2>
+      <h2>{{wine.name}}</h2>
+      <img src="{{wine.picture}}" alt="" width="200px" />
+      <i class="ion-android-favorite-outline" style="font-size:20px" ng-click="like(wine)"> Love it </i>
+      <p>${{wine.price}}</p>
+      <p>grape: {{wine.grape}}</p>
+      <p>vintage: {{wine.vintage}}</p>
+      <p>region: {{wine.region}}</p>
+      <a href="{{wine.storeUrl}}" class="button button-outline button-positive">Purchase Now</a>
+    </div>
+  </ion-slide>
+</ion-slide-box>
 
+<style media="screen">
+ion-item:hover a {
+background-color: slategray !important;
+}
+</style>
 
-  <ion-slide-box>
-    <ion-slide>
-      <div>
-        <button ng-click="Results.nextSlide()">next</button>
-        {{Results[0]}}
-      </div>
-    </ion-slide>
-    <ion-slide>
-      <div>
-        Slide 2!
-      </div>
-    </ion-slide>
-  </ion-slide-box>
+<!-- name: 'Veuve Clicquot Brut Yellow Label',
+grape: 'Non-Vintage',
+vineyard: 'Veuve Clicquot',
+vintage: 'Non-Vintage',
+region: 'France - Other regions',
+price: 55.99,
+picture: 'http://cache.wine.com/labels/528m.jpg',
+storeUrl: 'http://www.wine.com/v6/Veuve-Clicquot-Brut-Yellow-Label/wine/528/Detail.aspx' -->
