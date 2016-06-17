@@ -20,7 +20,7 @@
         //if logged in = true, save insertWine(wine)
         vm.like = !vm.like;
         if (vm.like) {
-          console.log(wine);
+          console.log(wine.name);
           Selections.insertWine(wine).then(function(item){
             console.log(item);
             return item;

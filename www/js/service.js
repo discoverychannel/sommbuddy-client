@@ -57,8 +57,10 @@
         })
       },
       insertWine: function(wine) {
-        
-        $http.post('/', wine).then(function(id){})
+        return $http.post('http://localhost:3000/', wine).then(function(data){
+          console.log(data);
+          return data;
+        })
       },
       removeWine: function(userId, name) {
 
