@@ -13,20 +13,20 @@
         // console.log('wines', wines);
       })
       vm.like = false;
-
       vm.liked = function (wine) {
         //check a method in loginService to see if user is logged in
 
         //if logged in = true, save insertWine(wine)
         vm.like = !vm.like;
         if (vm.like) {
-          console.log(wine.name);
           Selections.insertWine(wine).then(function(item){
-            console.log(item);
-            return item;
+            vm.wineId = item.data[0];
           });
         } else {
-          Selections.removeWine(wine);
+          Selections.removeWine(wine).then(function(removed){
+            return vm.removedQuantity = removed.data[0];
+            console.log(vm.removedQuantity);
+          });
         }
       };
     }

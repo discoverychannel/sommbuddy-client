@@ -1,0 +1,9 @@
+<ion-list show-delete="shouldShowDelete"
+          show-reorder="shouldShowReorder"
+          can-swipe="listCanSwipe">
+  <ion-item ng-repeat="wine in List.wineList"
+            class="wine-thumbnail-left">
+    <!-- <img ng-src="{{wine[0].picture}}"> -->
+    <h3>{{wine.name}}</h3>
+  </ion-item>
+</ion-list>
