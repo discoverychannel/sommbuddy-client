@@ -6,7 +6,7 @@ angular
     $scope.login = function() {
         LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
             $state.go('main');
-            ($scope.data.password && $scope.data.username){
+            if ($scope.data.password && $scope.data.username){
               $scope.vm.loggedIn = true;
             }
             $scope.data = {};
