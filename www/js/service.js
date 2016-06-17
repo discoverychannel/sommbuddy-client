@@ -47,17 +47,21 @@
                   typeof d[i][0].PriceRetail === 'number' ? d[i][0].PriceRetail : 'no price',
                   typeof d[i][0].Labels[0].Url === 'string' ? d[i][0].Labels[0].Url : 'no label',
                   typeof d[i][0].Url === 'string' ? d[i][0].Url : 'no url'
-                )
-                wines.push(wine);
+                  );
+                  wines.push(wine);
+                }
+                return wines;
               }
-              return wines;
-            }
-          return createWines();
+            return createWines();
+          })
         })
-      })
-    },
-      wineResults: function(){
-        return wines;
+      },
+      insertWine: function(wine) {
+        
+        $http.post('/', wine).then(function(id){})
+      },
+      removeWine: function(userId, name) {
+
       }
     }
   }

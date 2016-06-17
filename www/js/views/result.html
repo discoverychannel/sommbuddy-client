@@ -5,7 +5,12 @@
       <h3 class="wine-name">{{wine.name}}</h3>
       <div class="image-div">
         <img ng-src="{{wine.picture}}" alt="" width="200px" /><br/>
-        <i class="ion-android-favorite-outline" style="font-size:20px" ng-click="like(wine)"> Love it </i>
+        <div ng-if="!Results.like">
+          <i class="ion-android-favorite-outline" style="font-size:20px" ng-click="Results.liked()"> Love it </i>
+        </div>
+        <div ng-show="Results.like">
+          <i class="ion-android-favorite" style="font-size:20px" ng-click="Results.liked()"> Loving it </i>
+        </div>
       </div>
       <div class="wine-details">
         <p>${{wine.price}}</p>

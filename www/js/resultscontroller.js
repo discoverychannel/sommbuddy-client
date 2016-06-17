@@ -14,13 +14,16 @@
       })
       vm.like = false;
 
-      vm.like = function (wine) {
+      vm.liked = function () {
+        //check a method in loginService to see if user is logged in
+
+        //if logged in = true, save insertWine(wine)
         vm.like = !vm.like;
-        if (vm.like) {
-          //insert wine
-        } else {
-          //remove wine
-        }
+        // if (vm.like) {
+        //   Selections.insertWine(wine);
+        // } else {
+        //   Selections.removeWine(wine);
+        // }
       };
     }
 
