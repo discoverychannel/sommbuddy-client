@@ -24,7 +24,8 @@
           });
         } else {
           Selections.removeWine(wine).then(function(removed){
-            vm.removedQuantity = removed.data[0];
+            return vm.removedQuantity = removed.data[0];
+            console.log(vm.removedQuantity);
           });
         }
       };

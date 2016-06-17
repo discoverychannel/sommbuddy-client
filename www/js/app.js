@@ -102,6 +102,12 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $http
       templateUrl: 'js/views/result.html',
       controller: 'ResultsController',
       controllerAs: 'Results'
+    })
+    .state('list', {
+      url: '/list',
+      templateUrl: 'js/views/list.html',
+      controller: 'ListController',
+      controllerAs: 'List'
     });
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);

@@ -65,6 +65,13 @@
         return $http.put('http://localhost:3000/', wine).then(function(data){
           return data;
         })
+      },
+      getWineList: function() {
+        console.log('just before the service get request');
+        return $http.get('http://localhost:3000/list').then(function(data) {
+          console.log(data.data[0].name);
+          return data;
+        })
       }
     }
   }
