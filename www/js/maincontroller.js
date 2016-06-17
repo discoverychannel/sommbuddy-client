@@ -26,7 +26,7 @@
       vm.nextSlide = function() {
         $ionicSlideBoxDelegate.next();
       }
-      // vm.results = Selections.wineResults();
+      vm.results = Selections.wineResults();
     }
 
 })();
