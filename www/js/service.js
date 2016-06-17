@@ -10,10 +10,20 @@
     var userSelection = 0;
     var wines = [];
 
+    function Wine (name, grape, vineyard, vintage, region, price, picture, storeUrl){
+      this.name = name;
+      this.grape = grape;
+      this.vineyard = vineyard;
+      this.vintage = vintage;
+      this.region = region;
+      this.price = price;
+      this.picture = picture;
+      this.storeUrl = storeUrl
+    }
+
     return {
       addVal: function(val) {
          userSelection += val;
-         console.log(userSelection);
          return userSelection;
       },
       getWines: function(price) {
@@ -29,47 +39,27 @@
         })
         .then(function(filterCodes) {
           $http.get('http://localhost:3000/' + filterCodes).then(function(d) {
-            d = d.data[0];
-            console.log("Name = " + d[0].Name);
-            console.log("Varietal = " + d[0].Varietal.Name);
-            console.log("Vineyard =" + d[0].Vineyard.Name);
-            console.log("Vintage = " + d[0].Vintage);
-            console.log("Region = " + d[0].Appellation.Region.Name);
-            console.log("Price = " + d[0].PriceRetail);
-            console.log("Picture = " + d[0].Labels[0].Url);
-            console.log("StoreUrl = " + d[0].Url);
-            console.log(d[0]);
-            function Wine (name, grape, vineyard, vintage, region, price, picture, storeUrl){
-              this.name = name;
-              this.grape = grape;
-              this.vineyard = vineyard;
-              this.vintage = vintage;
-              this.region = region;
-              this.price = price;
-              this.picture = picture;
-              this.storeUrl = storeUrl
-            }
-
-            var createWines = function(index){
-              for (var i = 0; i < 3; i++) {
-                var wine = new Wine (
-                  d[i].Name,
-                  d[i].Varietal.Name,
-                  d[i].Vineyard.Name,
-                  d[i].Vintage,
-                  d[i].Appellation.Name + ', ' + d[i].Apellation.Region.Name,
-                  d[i].PriceRetail,
-                  d[i].Labels[0].Url,
-                  d[i].Url
-                );
+            d = d.data;
+            var createWines = function() {
+              for(var i = 0; i < 3; i++) {
+                var wine = new Wine(
+                  typeof d[i][0].Name === 'string' ? d[i][0].Name : 'no name',
+                  typeof d[i][0].Varietal.Name === 'string' ? d[i][0].Varietal.Name : 'no grape',
+                  typeof d[i][0].Vineyard.Name === 'string' ? d[i][0].Vineyard.Name : 'no vineyard',
+                  typeof d[i][0].Vintage === 'string' ? d[i][0].Vintage : 'no vintage',
+                  typeof d[i][0].Appellation.Name === 'string' ? d[i][0].Appellation.Name : 'no region',
+                  typeof d[i][0].PriceRetail === 'number' ? d[i][0].PriceRetail : 'no price',
+                  typeof d[i][0].Labels[0].Url === 'url' ? d[i][0].Labels[0].Url : 'no label',
+                  typeof d[i][0].Url === 'string' ? d[i][0].Url : 'no url'
+                )
                 wines.push(wine);
-                console.log(wine);
               }
             }
-            createWines();
-          })
+          createWines();
+          console.log(wines);
         })
-      },
+      })
+    },
       wineResults: function(){
         return wines;
       }

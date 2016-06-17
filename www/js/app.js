@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('sommbuddy', ['ionic', 'ui.router']);
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('main', {
       url: '/',
@@ -86,6 +86,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controllerAs: 'Main'
     });
     $urlRouterProvider.otherwise('/');
+    $locationProvider.html5Mode(true);
 });
 
 app.run(function($ionicPlatform) {
