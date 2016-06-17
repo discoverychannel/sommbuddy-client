@@ -58,7 +58,6 @@
       },
       insertWine: function(wine) {
         return $http.post('http://localhost:3000/', wine).then(function(data){
-          console.log(data);
           return data;
         })
       },
