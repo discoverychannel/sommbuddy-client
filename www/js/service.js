@@ -61,8 +61,8 @@
           return data;
         })
       },
-      removeWine: function(id) {
-        return $http.delete('http://localhost:3000/').then(function(data){
+      removeWine: function(wine) {
+        return $http.put('http://localhost:3000/', wine).then(function(data){
           return data;
         })
       }

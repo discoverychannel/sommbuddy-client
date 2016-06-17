@@ -23,8 +23,8 @@
             vm.wineId = item.data[0];
           });
         } else {
-          Selections.removeWine(vm.wineId).then(function(item){
-            vm.removedItem = item.data[0];
+          Selections.removeWine(wine).then(function(removed){
+            vm.removedQuantity = removed.data[0];
           });
         }
       };

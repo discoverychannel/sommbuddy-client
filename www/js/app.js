@@ -5,7 +5,20 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('sommbuddy', ['ionic', 'ui.router']);
 
-app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+app.config(function($httpProvider) {
+      //Enable cross domain calls
+      $httpProvider.defaults.useXDomain = true;
+
+      //Remove the header used to identify ajax call  that would prevent CORS from working
+      delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  });
+
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+
+  $httpProvider.defaults.useXDomain = true;
+
+  delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
   $stateProvider
   .state('login', {
     url: '/login',
