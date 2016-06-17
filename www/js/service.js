@@ -1,10 +1,6 @@
 (function () {
   'use strict'
-
-  angular
-    .module('sommbuddy')
-    .factory('Selections', Selections);
-
+  app.factory('Selections', Selections);
   function Selections($http) {
 
     var userSelection = 0;

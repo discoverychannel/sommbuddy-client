@@ -23,7 +23,7 @@
         // Selections.getWines(priceurl);
         $state.go('result');
       }
-
+      vm.results = Selections.wineResults();
     }
 
 })();
