@@ -20,10 +20,8 @@
       }
       vm.price = function(val) {
         var priceurl = 'price'+val;
-        // Selections.getWines(priceurl);
-        $state.go('result');
+        $state.go('result', {price:priceurl});
       }
-      vm.results = Selections.wineResults();
     }
 
 })();
