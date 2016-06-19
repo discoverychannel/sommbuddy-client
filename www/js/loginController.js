@@ -1,22 +1,18 @@
 angular
-  .module('sommbuddy').controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
-    $scope.data = {};
-    $scope.vm = {};
+  .module('sommbuddy')
+  .controller('LoginCtrl', LoginCtrl);
 
-    $scope.login = function() {
-        LoginService.loginUser($scope.data.username, $scope.data.password).then(function(data) {
-            $state.go('main');
-            if ($scope.data.password && $scope.data.username){
-              $scope.vm.loggedIn = true;
+  function LoginCtrl(LoginService, $ionicPopup, $state) {
+    var vm = this;
+
+    vm.login = function() {
+        LoginService
+          .loginUser(vm.username, vm.password)
+          .then(function(data) {
+            console.log(data);
+            if(data === 'match!'){
+              $state.go('main');
             }
-            $scope.data = {};
         })
-
-        // .error(function(data) {
-        //     var alertPopup = $ionicPopup.alert({
-        //         title: 'Login Failed',
-        //         template: 'Your username or password is incorrect.'
-        //     });
-        // });
     }
-})
+}
