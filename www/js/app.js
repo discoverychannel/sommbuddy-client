@@ -23,7 +23,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $http
   .state('login', {
     url: '/login',
     templateUrl: 'js/views/login.html',
-    controller: 'LoginCtrl'
+    controller: 'LoginCtrl',
+    controllerAs: 'Login' 
 })
     .state('main', {
       url: '/',
