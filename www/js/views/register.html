@@ -1,11 +1,5 @@
 <ion-view view-title="Login" name="login-view">
   <ion-content class="padding">
-    <div class="question" ng-show="Login.wrongPass">
-      wrong password
-    </div>
-    <div class="question" ng-show="Login.register">
-      Username not found. Register <a ui-sref="register" ng-click="Login.registerButton()">here</a>
-    </div>
     <div class="list list-inset">
       <label class="item item-input">
         <input type="text" placeholder="Username" ng-model="Login.username">

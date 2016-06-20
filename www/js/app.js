@@ -20,12 +20,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $http
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
   $stateProvider
-  .state('login', {
-    url: '/login',
-    templateUrl: 'js/views/login.html',
-    controller: 'LoginCtrl',
-    controllerAs: 'Login' 
-})
     .state('main', {
       url: '/',
       templateUrl: 'js/views/main.html',
@@ -103,6 +97,18 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $http
       templateUrl: 'js/views/result.html',
       controller: 'ResultsController',
       controllerAs: 'Results'
+    })
+    .state('login', {
+      url: '/login',
+      templateUrl: 'js/views/login.html',
+      controller: 'LoginCtrl',
+      controllerAs: 'Login' 
+    })
+    .state('register', {
+      url: '/register',
+      templateUrl: 'js/views/register.html',
+      controller: 'LoginCtrl',
+      controllerAs: 'Login'
     })
     .state('list', {
       url: '/list',

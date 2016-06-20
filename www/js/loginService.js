@@ -7,10 +7,11 @@ app.service('LoginService', function($q, $http) {
         return data.data;
       })
     },
-    checkStatus : function(){
-      return status;
+    loggedIn: function(bool){
+      status = bool;
     },
-
-
+    loggedInStatus: function() {
+      return status;
+    }
   }
 })

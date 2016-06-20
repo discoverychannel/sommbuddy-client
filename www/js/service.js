@@ -39,14 +39,14 @@
             var createWines = function() {
               for(var i = 0; i < 3; i++) {
                 var wine = new Wine(
-                  typeof d[i][0].Name === 'string' ? d[i][0].Name : 'no name',
-                  typeof d[i][0].Varietal.Name === 'string' ? d[i][0].Varietal.Name : 'no grape',
-                  typeof d[i][0].Vineyard.Name === 'string' ? d[i][0].Vineyard.Name : 'no vineyard',
-                  typeof d[i][0].Vintage === 'string' ? d[i][0].Vintage : 'no vintage',
-                  typeof d[i][0].Appellation.Name === 'string' ? d[i][0].Appellation.Name : 'no region',
-                  typeof d[i][0].PriceRetail === 'number' ? d[i][0].PriceRetail : 'no price',
-                  typeof d[i][0].Picture === 'string' ? d[i][0].Picture : 'no picture',
-                  typeof d[i][0].Url === 'string' ? d[i][0].Url : 'no url'
+                  typeof d[i][0].Name != 'undefined' ? d[i][0].Name : 'no name',
+                  typeof d[i][0].Varietal.Name != 'undefined' ? d[i][0].Varietal.Name : 'no grape',
+                  typeof d[i][0].Vineyard.Name != 'undefined' ? d[i][0].Vineyard.Name : 'no vineyard',
+                  typeof d[i][0].Vintage != 'undefined' ? d[i][0].Vintage : 'no vintage',
+                  typeof d[i][0].Appellation.Name != 'undefined' ? d[i][0].Appellation.Name : 'no region',
+                  typeof d[i][0].PriceRetail != 'undefined' ? d[i][0].PriceRetail : 'no price',
+                  typeof d[i][0].Picture != 'undefined' ? d[i][0].Picture : 'no picture',
+                  typeof d[i][0].Url != 'undefined' ? d[i][0].Url : 'no url'
                   );
                   wines.push(wine);
                 }

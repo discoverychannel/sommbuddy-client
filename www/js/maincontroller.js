@@ -5,7 +5,7 @@
     .module('sommbuddy')
     .controller('MainController', MainController);
 
-    function MainController($state, Selections) {
+    function MainController($state, Selections, LoginService) {
       var vm = this;
 
       vm.choice = function (val) {
@@ -22,6 +22,13 @@
         var priceurl = 'price'+val;
         $state.go('result', {price:priceurl});
       }
-    }
+      vm.getList = function() {
+          if (LoginService.loggedInStatus() === true) {
+            $state.go('list');
+          } else {
+            $state.go('login');
+          }
+        }
+      }
 
 })();
